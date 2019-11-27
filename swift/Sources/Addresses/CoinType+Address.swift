@@ -8,6 +8,7 @@ import Foundation
 
 public extension CoinType {
     /// Converts a string to an address for this coin type.
+    // swiftlint:disable function_body_length
     func address(string: String) -> Address? {
         guard self.validate(address: string) else {
             return nil
@@ -100,6 +101,8 @@ public extension CoinType {
             return TONAddress(string: string)
         case .kusama:
             return KusamaAddress(string: string)
+        case .polkadot:
+            return PolkadotAddress(string: string)
         }
     }
 }
